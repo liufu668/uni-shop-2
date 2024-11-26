@@ -1,5 +1,7 @@
 <template>
-
+  <view>
+    Goods_list
+  </view>
 </template>
 
 <script>
@@ -9,12 +11,9 @@
         
       };
     },
-    onLoad() {
-      
-    },
     methods: {
-      
-    },
+
+    }
   }
 </script>
 

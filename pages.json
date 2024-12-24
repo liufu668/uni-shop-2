@@ -41,6 +41,13 @@
         {
           "navigationBarTitleText" : ""
         }
+      },
+      {
+        "path" : "search/search",
+        "style" : 
+        {
+          "navigationBarTitleText" : ""
+        }
       }]
     }
   ],

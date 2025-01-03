@@ -80,6 +80,7 @@
         
         // 将 Array 数组转化为 Set 对象
         const set = new Set(this.historyList)
+        // 先删再加，是为了更新它在搜索历史里的位置
         set.delete(this.kw)
         set.add(this.kw)
         // 将 Set 对象转化为 Array 数组

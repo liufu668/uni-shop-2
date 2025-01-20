@@ -47,7 +47,10 @@
 </template>
 
 <script>
+  import badgeMix from '@/mixins/tabbar-badge.js'
   export default {
+    // 将 badgeMix 混入到当前页面中进行使用
+    mixins: [badgeMix],
     data() {
       return {
         // 轮播图的数据列表，默认为空数组

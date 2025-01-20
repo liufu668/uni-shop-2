@@ -82,7 +82,13 @@
 			},
 			modelValue(val) {
 				this.inputValue = +val;
-			}
+			},
+      inputValue(newVal, oldVal) {
+        // 新旧内容不同 && 新值内容合法 && 新值中不包含小数点
+        if(+newVal !== +oldVal && Number(newVal) && String(newVal).indexOf('.') === -1) {
+          this.$emit("change", newVal);
+        }
+      }
 		},
 		computed: {
 			widthWithPx() {
@@ -143,6 +149,16 @@
 			},
 			_onBlur(event) {
 				this.$emit('blur', event)
+        
+        // // 将用户输入的内容转化为整数
+        // let value = parseInt(event.detail.value);
+        
+        // if(!value) {
+        //   // 如果转化之后的结果为NaN(非法字符),则给定默认值为 1
+        //   this.inputValue = 1;
+        //   return;
+        // }
+        
 				let value = event.detail.value;
 				if (isNaN(value)) {
 					this.inputValue = this.value;
@@ -164,7 +180,7 @@
 				this.$emit('focus', event)
 			}
 		}
-	};
+	}
 </script>
 <style lang="scss">
 	$box-height: 26px;
